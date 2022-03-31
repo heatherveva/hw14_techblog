@@ -8,32 +8,14 @@
   <div class='col-md-6'>
     <h3>Write a New Blog Post:</h3>
 
-    <form class='form new-project-form'>
+    <form class='form new-blog-form'>
       <div class='form-group'>
-        <label for='project-name'>project name:</label>
-        <input
-          class='form-input'
-          type='text'
-          id='project-name'
-          name='project-name'
-        />
+        <label for='blog-name'>Title:</label>
+        <input class='form-input' type='text' id='blog-name' name='blog-name' />
       </div>
       <div class='form-group'>
-        <label for='project-funding'>needed funding ($):</label>
-        <input
-          class='form-input'
-          type='number'
-          id='project-funding'
-          name='project-funding'
-        />
-      </div>
-      <div class='form-group'>
-        <label for='project-desc'>description:</label>
-        <textarea
-          class='form-input'
-          id='project-desc'
-          name='project-desc'
-        ></textarea>
+        <label for='blog-desc'>Content:</label>
+        <textarea class='form-input' id='blog-desc' name='blog-desc'></textarea>
       </div>
       <div class='form-group'>
         <button type='submit' class='btn btn-primary'>Create</button>
@@ -41,19 +23,19 @@
     </form>
   </div>
 
-  {{#if projects.length}}
-    <div class='col-md-6 project-list'>
+  {{#if blogs.length}}
+    <div class='col-md-6 blog-list'>
       <h3>Your Blog Posts</h3>
 
-      {{#each projects as |project|}}
+      {{#each blogs as |blog|}}
         <div class='row mb-2'>
           <div class='col-md-8'>
-            <h4><a href='/project/{{project.id}}'>{{project.name}}</a></h4>
+            <h4><a href='/blogs/{{blog.id}}'>{{blog.title}}</a></h4>
           </div>
           <div class='col-md-4'>
             <button
               class='btn btn-sm btn-danger'
-              data-id='{{project.id}}'
+              data-id='{{blog.id}}'
             >DELETE</button>
           </div>
         </div>
