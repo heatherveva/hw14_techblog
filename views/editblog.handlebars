@@ -1,0 +1,18 @@
+<div class='text-center'>
+  <h2>{{title}}</h2>
+  <p>{{{get_emoji}}}</p>
+  <p>{{content}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+
+  <div contenteditable='true'>
+    {{blog.content}}
+  </div>
+  <!-- editable input form goes here -->
+
+  <p>
+    <button id='save' class='btn btn-primary'>save</button>
+  </p>
+
+  <!-- onclick "save" button, user is redirected to their profile -->
+
+</div>

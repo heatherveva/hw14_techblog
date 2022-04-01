@@ -37,6 +37,22 @@ const delButtonHandler = async (event) => {
   }
 };
 
+// const editButtonHandler = async (event) => {
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
+
+//     const response = await fetch(`/api/blog/${id}`, {
+//       method: 'EDIT',
+//     });
+
+//     if (response.ok) {
+//       document.location.replace('/profile');
+//     } else {
+//       alert('Failed to edit blog post.');
+//     }
+//   }
+// };
+
 document
   .querySelector('.new-blog-form')
   .addEventListener('submit', newFormHandler);
@@ -44,3 +60,4 @@ document
 document
   .querySelector('.blog-list')
   .addEventListener('click', delButtonHandler);
+// .addEventListener('click', editButtonHandler);

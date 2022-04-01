@@ -35,4 +35,24 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', (req, res) => {
+  Blog.update(
+    {
+      title: req.body.title,
+      content: req.body.content,
+    },
+    {
+      // Gets the blog based on the id given in the request parameters
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((updatedBlog) => {
+      // Sends the updated book as a json response
+      res.json(updatedBlog);
+    })
+    .catch((err) => res.json(err));
+});
+
 module.exports = router;

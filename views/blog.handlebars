@@ -5,11 +5,11 @@
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 
   <p>
-    <button class='btn btn-primary'>Create a Blog Post!</button>
+    <button class='btn btn-primary'>COMMENT</button>
   </p>
   <div>
     {{#each blog.comments as |comment|}}
-      <div>{{comment.text}}</div>
+      {{comment.text}}
     {{/each}}
   </div>
 </div>
