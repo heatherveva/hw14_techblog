@@ -4,14 +4,18 @@
   <p>{{content}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 
- 
-  <div>
+ <div class='comments'>
     {{#each comments as |comment|}}
-      {{comment.text}}
+      <div class='comment'>
+        <p class='comment-content'>{{comment.text}}</p>
+        <p class='comment-details'>{{comment.user.name}}
+          {{format_date comment.date_created}}</p>
+      </div>
     {{/each}}
   </div>
   <form class='form new-comment-form'>
       <div class='form-group'>
+        <input value='{{id}}' type='hidden' name='blog_id' /> 
         <label for='comment-text'>💬 Comment:</label>
         <textarea class='form-input' id='comment-desc' name='comment-desc'></textarea>
       </div>
