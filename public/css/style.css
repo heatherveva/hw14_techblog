@@ -1,5 +1,49 @@
-header, .project:not(:last-child) {
+header,
+.project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+}
+
+body {
+  background-color: #e4eee2;
+}
+
+.blog {
+  color: #0f450b;
+}
+
+.blogmain {
+  color: #0f450b;
+}
+
+.blogmain:hover {
+  color: #1e5c19;
+}
+
+.blogtitle {
+  color: #0f450b;
+  font-family: 'Anton', sans-serif;
+}
+
+.navbar {
+  color: #0f450b;
+  font-family: 'Anton', sans-serif;
+  font-size: 60px;
+  font-weight: bolder;
+  letter-spacing: 0.2rem;
+}
+
+.navbar:hover {
+  color: #1e5c19;
+  text-decoration: underline;
+}
+
+.navbarsmall {
+  color: #0f450b;
+}
+
+.navbarsmall:hover {
+  color: #1e5c19;
+  text-decoration: underline;
 }
 
 .no-button {
@@ -7,18 +51,12 @@ header, .project:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: #0f450b;
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: #1e5c19;
   text-decoration: underline;
-}
-
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
 }

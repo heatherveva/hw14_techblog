@@ -35,8 +35,8 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
-  Blog.update(
+router.put('/:id', withAuth, async (req, res) => {
+  const updatedBlog = await Blog.update(
     {
       title: req.body.title,
       content: req.body.content,
@@ -45,14 +45,12 @@ router.put('/:id', (req, res) => {
       // Gets the blog based on the id given in the request parameters
       where: {
         id: req.params.id,
+        user_id: req.session.user_id,
       },
     }
-  )
-    .then((updatedBlog) => {
-      // Sends the updated book as a json response
-      res.json(updatedBlog);
-    })
-    .catch((err) => res.json(err));
+  );
+
+  return res.json(updatedBlog);
 });
 
 module.exports = router;
