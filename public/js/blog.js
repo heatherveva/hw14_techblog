@@ -5,7 +5,7 @@ const newFormHandler = async (event) => {
   const blog_id = document.querySelector('input[name="blog_id"]').value.trim();
 
   if (text) {
-    const response = await fetch('/:id', {
+    const response = await fetch('/blog/:id', {
       method: 'POST',
       body: JSON.stringify({ text, blog_id }),
       headers: {

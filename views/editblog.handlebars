@@ -1,18 +1,31 @@
 <div class='text-center'>
-  <h2>{{title}}</h2>
+  <h2>Welcome back, {{user_id}}!</h2>
+  <h3>We heard you have some updates.</h3>
   <p>{{{get_emoji}}}</p>
   <p>{{content}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 
   <div contenteditable='true'>
-    {{blog.content}}
+    {{blog.title}}
   </div>
   <!-- editable input form goes here -->
+<div class='row mt-4'>
+  <div class='col-md-6'>
+    <h3>Edit Your Blog Post:</h3>
 
-  <p>
-    <button id='save' class='btn btn-primary'>save</button>
-  </p>
-
-  <!-- onclick "save" button, user is redirected to their profile -->
-
+    <form contenteditable='true' class='form new-blog-form'>
+      <div class='form-group update-blog-form'>
+        <label for='blog-name'>Title:</label>
+        <input class='form-input' type='text' id='blog-name' name='blog-name' />
+      </div>
+      <div class='form-group'>
+        <label for='blog-desc'>Content:</label>
+        <textarea class='form-input' id='blog-desc' name='blog-desc'></textarea>
+      </div>
+      <div class='form-group'>
+        <!-- onclick "save" button, user is redirected to their profile -->
+        <button type='submit' class='btn btn-primary'>UPDATE</button>
+      </div>
+    </form>
+  </div>
 </div>
