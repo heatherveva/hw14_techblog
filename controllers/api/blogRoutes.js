@@ -36,21 +36,25 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 router.put('/:id', withAuth, async (req, res) => {
-  const updatedBlog = await Blog.update(
-    {
-      title: req.body.title,
-      content: req.body.content,
-    },
-    {
-      // Gets the blog based on the id given in the request parameters
+  try {
+    const updatedBlog = await Blog.update({
+      where: {
+        title: req.body.title,
+        content: req.body.content,
+      },
+      // Gets the books based on the isbn given in the request parameters
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
+    });
+    if (!updatedBlog) {
+      res.status(404).json({ message: 'No blog posts found with this id!' });
+      return;
     }
-  );
-
-  return res.json(updatedBlog);
+    res.status(200).json(updatedBlog);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

@@ -1,11 +1,11 @@
-const newFormHandler = async (event) => {
+const newCommentHandler = async (event) => {
   event.preventDefault();
 
   const text = document.querySelector('#comment-desc').value.trim();
   const blog_id = document.querySelector('input[name="blog_id"]').value.trim();
 
   if (text) {
-    const response = await fetch('/blog/:id', {
+    const response = await fetch('/api/comment', {
       method: 'POST',
       body: JSON.stringify({ text, blog_id }),
       headers: {
@@ -14,7 +14,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.reload();
     } else {
       alert('Failed to create comment.');
     }
@@ -23,4 +23,4 @@ const newFormHandler = async (event) => {
 
 document
   .querySelector('.new-comment-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('submit', newCommentHandler);

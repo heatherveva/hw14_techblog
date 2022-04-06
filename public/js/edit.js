@@ -9,7 +9,7 @@ const updateFormHandler = async (event) => {
   // if inputs exist
   if (title && content) {
     // make fetch to post update route
-    const response = await fetch(`/api/blog/${id}`, {
+    const response = await fetch(`/blog/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ title, content }),
       headers: {
