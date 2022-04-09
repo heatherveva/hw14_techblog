@@ -38,4 +38,4 @@ GitHub Repository: https://github.com/heatherveva/hw14_techblog.git
 
 GitHub Page: https://heatherveva.github.io/hw14_techblog/
 
-Heroku:
+Heroku: https://techbloghomeworkfourteen.herokuapp.com/
