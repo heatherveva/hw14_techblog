@@ -38,18 +38,22 @@ const delButtonHandler = async (event) => {
 };
 
 const editButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+  event.preventDefault();
+  const id = document.querySelector('input[name="post-id"]').value.trim();
+  const title = document.querySelector('#edit-title').value.trim();
+  const description = document.querySelector('#edit-desc').value.trim();
 
-    const response = await fetch(`/api/blog/${id}`, {
-      method: 'EDIT',
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to edit blog post.');
-    }
+  const response = await fetch(`/api/blog/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({ title, description }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  if (response.ok) {
+    document.location.replace(`/post/${post.id}`);
+  } else {
+    alert('Failed to edit blog post.');
   }
 };
 
@@ -60,4 +64,4 @@ document
 document
   .querySelector('.blog-list')
   .addEventListener('click', delButtonHandler)
-  .addEventListener('click', editButtonHandler);
+  .addEventListener('submit', editButtonHandler);

@@ -17,7 +17,8 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // UPDATE A BLOG POST
-router.put('/:id', withAuth, async (req, res) => {
+//localhost:3001/api/blog/:id
+router.put('/:id', async (req, res) => {
   try {
     const updateBlog = await Blog.update(
       {

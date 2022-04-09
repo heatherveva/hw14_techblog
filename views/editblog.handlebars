@@ -13,16 +13,21 @@
   <div class='col-md-6'>
     <h3>Edit Your Blog Post:</h3>
 
-    <form contenteditable='true' class='form new-blog-form'>
-      <div class='form-group update-blog-form'>
-        <label for='blog-name'>Title:</label>
-        <input class='form-input' type='text' id='blog-name' name='blog-name' />
+  <div class='row mt-4'>
+  <div class='col-md-6'>
+    <h3>Write a New Blog Post:</h3>
+
+    <form class='form edit-blog-form'>
+      <div class='form-group'>
+        <label for='edit-title'>Title:</label>
+        <input class='form-input' type='text' id='edit-title' name='edit-title' />
       </div>
       <div class='form-group'>
-        <label for='blog-desc'>Content:</label>
-        <textarea class='form-input' id='blog-desc' name='blog-desc'></textarea>
+        <label for='edit-desc'>Content:</label>
+        <textarea class='form-input' id='edit-desc' name='edit-desc'></textarea>
       </div>
-      <div class='form-group'>
+    </form>
+  </div>
         <!-- onclick "save" button, user is redirected to their profile -->
         <button type='submit' class='btn btn-primary'>UPDATE</button>
       </div>
@@ -30,4 +35,4 @@
   </div>
 </div>
 
-<script src='../js/edit.js'></script>
+<script src='../js/blog.js'></script>
